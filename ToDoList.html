@@ -24,55 +24,36 @@
 <div class="row">
     <div class="col-md-4">
         <div ng-controller="todoController">
-
-            <br></br>
-
-            <br></br>
+            
             <div class="row">
-               
-                <div class="col-md-3">
+                <div class="container">
+                <div class="col-md-1">
+                </div>
+
+                <button type="button" class="btn btn-info" data-toggle="modal" ng-click="" data-target="#myModal"> <i class="fa fa-meh-o" aria-hidden="true"></i></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add To Do Work &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-meh-o" aria-hidden="true"></i></button>
                 
-
-
-                    <div class="container">
-                <!-- <button class="btn btn-info"  ng-click=""> Add ToDo </button>   --> 
-                <button type="button" class="btn btn-info" data-toggle="modal" ng-click="" data-target="#myModal">ADD ToDo</button>
-                  <div class="modal fade" id="myModal" role="dialog">
-                    <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <h4 class="modal-title">Add Your todo Work here</h4>
-                        </div>
-                        <div class="modal-body">
-                        <form name="frm" ng-submit="addTodo()"><!-- Enter Item-->
-                            <input class="form-control input-lg" type="text" name="newtodo" ng-model="todoText" placeholder="Enter Your Work To Do..." required/>
-                        </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="addTodo()">Add</button>
-                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Add Your todo Work here</h4>
+                            </div>
+                            <div class="modal-body">
+                            <form name="frm" ng-submit="addTodo()"><!-- Enter Item-->
+                                <input class="form-control input-lg" type="text" name="newtodo" ng-model="todoText" placeholder="Enter Your Work To Do..." required/>
+                            </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="addTodo()">Add</button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-
-                </div>
-                
-                <div class="col-md-3">
-                    <center>
-                    <button class="btn btn-info"  ng-click="clearCompleted()"> Clear Completed  </button><!-- Clear Complted Button -->
-                    </center>
-                </div>
-                <div class="col-md-1">
-                </div>
-                <div class="col-md-3">
-                    <button class="btn btn-info"  ng-click="undone()"> UnDone Activity </button><!-- Undone Button -->
-                </div>
             </div>
-            <br></br>
+           <br> </br>
             <div class="row">    
                 <ul>
     					<span ng-repeat="todo in todos track by $index"><!-- Display To do list -->
@@ -92,6 +73,23 @@
     					</span>
                 </ul>
             </div>
+
+             <div class="row">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-3">
+                    
+                    <button class="btn btn-info"  ng-click="clearCompleted()"> Clear Completed  </button><!-- Clear Complted Button -->
+                    
+                </div>
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-info"  ng-click="undone()"> UnDone Activity </button><!-- Undone Button -->
+                </div>
+            
+            </div>
+            <br></br>
         </div>
     </div>
 </div>
