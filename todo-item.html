@@ -1,0 +1,17 @@
+             <ul>
+                        <span ng-repeat="todo in todos track by $index"><!-- Display To do list -->
+                            <div class="panel panel-info">
+                                <div class="panel-body">
+                                    <div class="col-md-1">
+                                        <input type="checkbox" ng-model="todo.done"/>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <span ng-class="{'done':todo.done}">{{todo.text}}</span>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <button class="btn btn-default btn-xs" ng-click="delete()"><div id="c" ><i class="fa fa-times" aria-hidden="true"></i></div></font></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </span>
+                </ul>

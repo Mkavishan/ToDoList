@@ -55,23 +55,7 @@
             </div>
            <br> </br>
             <div class="row">    
-                <ul>
-    					<span ng-repeat="todo in todos track by $index"><!-- Display To do list -->
-    						<div class="panel panel-info">
-    							<div class="panel-body">
-                                    <div class="col-md-1">
-    								    <input type="checkbox" ng-model="todo.done"/>
-    								</div>
-                                    <div class="col-md-10">
-                                        <span ng-class="{'done':todo.done}">{{todo.text}}</span>
-    								</div>
-                                    <div class="col-md-1">
-                                        <button class="btn btn-default btn-xs" ng-click="delete()"><div id="c" ><i class="fa fa-times" aria-hidden="true"></i></div></font></button>
-    							    </div>
-                                </div>
-    						</div>
-    					</span>
-                </ul>
+                <todo-item></todo-item>
             </div>
 
              <div class="row">
@@ -95,49 +79,8 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"> </script>
-<script>
-    angular.module("ToDo",[]).controller("todoController", function($scope){
-        $scope.appname = "ABC";
-        $scope.saved = localStorage.getItem('todos');
-        $scope.todos = (localStorage.getItem('todos')!==null) ? JSON.parse($scope.saved) : [ ];
-        localStorage.setItem('todos', JSON.stringify($scope.todos));
-
-        $scope.addTodo = function() {
-            $scope.todos.push({
-                text: $scope.todoText,
-                done: false
-            });
-            $scope.todoText = ''; //clear the input after adding
-            localStorage.setItem('todos', JSON.stringify($scope.todos));
-        };
-
-        $scope.delete = function(){
-            $scope.todos.splice(this.$index,1);
-            localStorage.setItem('todos', JSON.stringify($scope.todos));
-        }
-
-        $scope.clearCompleted = function(){
-            var oldTodos = $scope.todos;
-            $scope.todos = [];
-            angular.forEach(oldTodos, function(todo){
-                if (!todo.done)
-                    $scope.todos.push(todo);
-            });
-
-            localStorage.setItem('todos', JSON.stringify($scope.todos));
-        }
-        $scope.undone = function(){
-            $scope.todos = $scope.todos.filter(function(item){
-                return !item.done
-            })
-
-        }
-
-    })
-
-</script>
-
 <script src="js/bootstrap.min.js"> </script>
+<script src="Todo.js"> </script>
 </body>
 
 </html>
